@@ -49,31 +49,26 @@ include('includes/db.php');
             <h2>Welcome to Our Website</h2>
             <p>Explore the various modules and services available on our platform. Get started by logging in or signing up!</p>
 
+            <!-- Module Overview -->
             <section class="module-overview">
-                <?php
-                $modules = [
-                    ['icon' => 'fa-chart-line', 'title' => 'Shares', 'desc' => 'Buy and sell shares from various companies.', 'link' => 'modules/shares.php'],
-                    ['icon' => 'fa-tasks', 'title' => 'Remotask', 'desc' => 'Complete online tasks and earn money.', 'link' => 'modules/remotask.php'],
-                    ['icon' => 'fa-gamepad', 'title' => 'Games', 'desc' => 'Play games and win rewards.', 'link' => 'modules/games.php'],
-                    ['icon' => 'fa-blog', 'title' => 'Blogs', 'desc' => 'Read and share blogs on various topics.', 'link' => 'modules/blogs.php'],
-                    ['icon' => 'fa-chart-bar', 'title' => 'Forex', 'desc' => 'Trade and invest in Forex markets.', 'link' => 'modules/forex.php'],
-                    ['icon' => 'fa-pen', 'title' => 'Online Writing', 'desc' => 'Get paid for writing articles and content.', 'link' => 'modules/online-writing.php'],
-                    ['icon' => 'fa-heart', 'title' => 'Hookups', 'desc' => 'Meet and connect with new people.', 'link' => 'modules/hookups.php'],
-                    ['icon' => 'fa-shopping-cart', 'title' => 'Shop', 'desc' => 'Buy and sell products securely.', 'link' => 'modules/shop.php'],
-                    ['icon' => 'fa-hand-holding-usd', 'title' => 'Loans', 'desc' => 'Apply for quick and secure loans.', 'link' => 'modules/loans.php'],
-                    ['icon' => 'fa-whatsapp', 'title' => 'WhatsApp Marketing', 'desc' => 'Promote your business via WhatsApp.', 'link' => 'modules/whatsapp-marketing.php'],
-                    ['icon' => 'fa-gift', 'title' => 'Reward Center', 'desc' => 'Earn and redeem rewards easily.', 'link' => 'modules/reward-center.php']
-                ];
-
-                foreach ($modules as $module) {
-                    echo "<div class='card'>
-                            <i class='fas {$module['icon']}'></i>
-                            <h3>{$module['title']}</h3>
-                            <p>{$module['desc']}</p>
-                            <a href='{$module['link']}' class='btn'>Explore</a>
-                          </div>";
-                }
-                ?>
+                <div class="card">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>Shares</h3>
+                    <p>Buy and sell shares from various companies.</p>
+                    <a href="modules/shares.php" class="btn">Explore</a>
+                </div>
+                <div class="card">
+                    <i class="fas fa-tasks"></i>
+                    <h3>Remotask</h3>
+                    <p>Complete online tasks and earn money.</p>
+                    <a href="modules/remotask.php" class="btn">Explore</a>
+                </div>
+                <div class="card">
+                    <i class="fas fa-gamepad"></i>
+                    <h3>Games</h3>
+                    <p>Play games and win rewards.</p>
+                    <a href="modules/games.php" class="btn">Explore</a>
+                </div>
             </section>
 
             <!-- Call-to-Action Section -->
@@ -86,7 +81,6 @@ include('includes/db.php');
         </div>
     </main>
 
-    
     <!-- Footer Section -->
     <footer>
         <div class="container">
@@ -94,28 +88,39 @@ include('includes/db.php');
         </div>
     </footer>
 
-    <!-- Login & Signup Modals -->
+    <!-- Login Modal -->
     <div id="loginModal" class="modal">
         <div class="modal-content">
             <span class="close" onclick="closeLoginModal()">&times;</span>
             <h3>Login</h3>
             <form action="login_process.php" method="POST">
-                <input type="text" placeholder="Username" required>
-                <input type="password" placeholder="Password" required>
-                <button type="submit" class="btn">Login</button>
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" required>
+
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+
+                <button type="submit">Login</button>
             </form>
         </div>
     </div>
 
+    <!-- Signup Modal -->
     <div id="signupModal" class="modal">
         <div class="modal-content">
             <span class="close" onclick="closeSignupModal()">&times;</span>
             <h3>Sign Up</h3>
             <form action="signup_process.php" method="POST">
-                <input type="text" placeholder="Username" required>
-                <input type="email" placeholder="Email" required>
-                <input type="password" placeholder="Password" required>
-                <button type="submit" class="btn">Sign Up</button>
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" required>
+
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+
+                <button type="submit">Sign Up</button>
             </form>
         </div>
     </div>
